@@ -1,20 +1,24 @@
 import type { NextConfig } from "next";
 
+// Host under a subpath (e.g. a GitHub *project* page https://<user>.github.io/<repo>/)
+// by building with PAGES_BASE_PATH=/<repo>. Leave unset for a custom domain at the
+// apex (accountsup.com) or for Vercel.
+const basePath =
+  process.env.PAGES_BASE_PATH?.trim().replace(/\/$/, "") || "";
+
 const nextConfig: NextConfig = {
-  // Static HTML export → deploys to GitHub Pages, Vercel, Netlify, S3, or any static host.
-  // Remove this line if you later move to Vercel and want server features (ISR, server actions).
+  // Static HTML export → deploys to GitHub Pages, Vercel, Netlify, or any static host.
+  // Remove this line if you later move to Vercel and want server features.
   output: "export",
 
-  // Required for `output: export` since there is no server to optimize images at runtime.
+  // Required for `output: export` (no server to optimize images at runtime).
   images: { unoptimized: true },
 
   // Emit /services/index.html etc. — cleaner for static hosts like GitHub Pages.
   trailingSlash: true,
 
-  // If you deploy to a GitHub *project* page (username.github.io/repo) WITHOUT a custom
-  // domain, uncomment and set basePath to "/<repo-name>". With a custom domain
-  // (accountsup.com) at the apex, leave it empty.
-  // basePath: "/accountsup-site",
+  // Applied only when PAGES_BASE_PATH is set (project-page hosting under a subpath).
+  ...(basePath ? { basePath } : {}),
 };
 
 export default nextConfig;
