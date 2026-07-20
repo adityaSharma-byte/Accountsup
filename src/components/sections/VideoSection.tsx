@@ -1,17 +1,21 @@
-import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { media } from "@/content/media";
 
 export default function VideoSection() {
   return (
-    <section className="bg-white py-20 sm:py-24">
-      <Container>
+    <section className="overflow-hidden bg-navy py-16 text-white sm:py-20">
+      <div className="container-x">
         <SectionHeading
           eyebrow="Watch"
           title="See how AccountsUp works"
-          subtitle="A 60-second look at the global finance partner behind your numbers."
+          subtitle="A cinematic look at the global finance partner behind your numbers."
+          light
         />
-        <div className="mt-12 overflow-hidden rounded-3xl border border-line bg-navy shadow-xl">
+      </div>
+
+      {/* Full-bleed on mobile, ~70% of the viewport on desktop */}
+      <div className="mt-10 sm:mt-14">
+        <div className="mx-auto w-full overflow-hidden bg-black shadow-2xl ring-1 ring-white/10 sm:w-[92%] sm:max-w-6xl sm:rounded-2xl lg:w-[70%]">
           <video
             className="aspect-video w-full"
             controls
@@ -23,7 +27,7 @@ export default function VideoSection() {
             Your browser does not support the video tag.
           </video>
         </div>
-      </Container>
+      </div>
     </section>
   );
 }

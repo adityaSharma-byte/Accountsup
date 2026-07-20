@@ -18,12 +18,12 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-navy text-white">
-      <div className="container-x flex h-16 items-center justify-between">
+      <div className="container-x flex h-20 items-center justify-between">
         <Link href="/" aria-label={site.name} className="flex items-center">
           <Logo tone="light" />
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-9 md:flex">
           {site.nav.map((item) => {
             const active =
               item.href === "/"
@@ -33,8 +33,8 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`text-sm font-medium transition-colors hover:text-brand ${
-                  active ? "text-brand" : "text-white/85"
+                className={`text-[0.95rem] font-semibold transition-colors hover:text-brand ${
+                  active ? "text-brand" : "text-white/90"
                 }`}
               >
                 {item.label}
@@ -54,7 +54,7 @@ export default function Header() {
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
         >
-          {open ? <X size={24} /> : <Menu size={24} />}
+          {open ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
@@ -65,7 +65,7 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="rounded-lg px-3 py-2.5 text-sm font-medium text-white/85 transition-colors hover:bg-white/5 hover:text-brand"
+                className="rounded-lg px-3 py-3 text-base font-semibold text-white/90 transition-colors hover:bg-white/5 hover:text-brand"
               >
                 {item.label}
               </Link>

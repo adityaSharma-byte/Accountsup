@@ -19,7 +19,7 @@ export default function ServicesOverview() {
           {featuredServices.map((s) => (
             <Link
               key={s.slug}
-              href={`/services#${s.slug}`}
+              href={`/services/${s.slug}`}
               className="group flex flex-col rounded-2xl border border-line bg-white p-6 transition-all hover:-translate-y-1 hover:shadow-xl"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-soft text-brand transition-colors group-hover:bg-brand group-hover:text-white">

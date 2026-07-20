@@ -13,16 +13,16 @@ export default function SectionHeading({
   align?: "center" | "left";
   light?: boolean;
 }) {
-  const alignment = align === "center" ? "text-center mx-auto" : "text-left";
+  const alignment = align === "center" ? "mx-auto text-center" : "text-left";
   return (
-    <div className={`${alignment} max-w-2xl ${align === "center" ? "" : ""}`}>
+    <div className={`${alignment} max-w-3xl`}>
       {eyebrow && (
-        <p className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-brand">
+        <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-brand">
           {eyebrow}
         </p>
       )}
       <h2
-        className={`text-3xl font-bold leading-tight tracking-tight sm:text-4xl ${
+        className={`text-3xl font-extrabold leading-[1.12] tracking-tight sm:text-4xl md:text-[2.75rem] ${
           light ? "text-white" : "text-ink"
         }`}
       >
@@ -30,8 +30,8 @@ export default function SectionHeading({
       </h2>
       {subtitle && (
         <p
-          className={`mt-4 text-base leading-relaxed ${
-            light ? "text-white/70" : "text-body"
+          className={`mt-5 text-lg leading-relaxed ${
+            light ? "text-white/75" : "text-body"
           }`}
         >
           {subtitle}

@@ -1,9 +1,7 @@
 @import "tailwindcss";
 
 /* ------------------------------------------------------------------ *
- * AccountsUp design system
- * Palette + type inspired by the Global FPO layout: warm orange accent
- * on deep slate, generous whitespace, Helvetica-style sans.
+ * AccountsUp design system — warm orange accent on deep slate.
  * Edit these tokens to re-skin the whole site.
  * ------------------------------------------------------------------ */
 @theme {
@@ -15,8 +13,8 @@
   --color-navy-light: #2d3f50;
   --color-navy-dark: #1a2530;
 
-  --color-ink: #1d2a35;
-  --color-body: #55626d;
+  --color-ink: #16212b;
+  --color-body: #4a5763;
   --color-muted: #8b949d;
 
   --color-cream: #f8f6f2;
@@ -25,16 +23,33 @@
   --font-sans: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif;
 }
 
+/* Larger base type for a bigger, more readable, premium feel. */
 html {
+  font-size: 112.5%; /* 18px base */
   scroll-behavior: smooth;
+}
+@media (max-width: 480px) {
+  html {
+    font-size: 106.25%; /* 17px on small phones */
+  }
 }
 
 body {
   background: #ffffff;
   color: var(--color-body);
   font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--color-ink);
+  letter-spacing: -0.01em;
 }
 
 ::selection {
@@ -45,7 +60,7 @@ body {
 /* Centered content column */
 .container-x {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1240px;
   margin-inline: auto;
   padding-inline: 1.25rem;
 }
@@ -55,7 +70,6 @@ body {
   }
 }
 
-/* Focus ring for keyboard users */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,

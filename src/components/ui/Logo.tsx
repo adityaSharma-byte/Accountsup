@@ -1,16 +1,16 @@
 import { site } from "@/content/site";
 
 /**
- * Wordmark: "Accounts" + brand-colored "Up", with a small rising-ledger mark.
+ * Wordmark: "Accounts" + brand-colored "Up", with a rising-ledger mark.
  * tone="light" for dark backgrounds (header/footer), "dark" for light sections.
  */
 export default function Logo({ tone = "dark" }: { tone?: "light" | "dark" }) {
   const text = tone === "light" ? "text-white" : "text-ink";
   return (
-    <span className="inline-flex items-center gap-2">
+    <span className="inline-flex items-center gap-2.5">
       <svg
-        width="26"
-        height="26"
+        width="38"
+        height="38"
         viewBox="0 0 24 24"
         fill="none"
         aria-hidden="true"
@@ -21,7 +21,7 @@ export default function Logo({ tone = "dark" }: { tone?: "light" | "dark" }) {
         <rect x="10.7" y="9" width="2.6" height="8" rx="1.3" fill="#fff" />
         <rect x="15.4" y="6" width="2.6" height="11" rx="1.3" fill="#fff" />
       </svg>
-      <span className={`text-lg font-bold tracking-tight ${text}`}>
+      <span className={`text-2xl font-extrabold tracking-tight ${text}`}>
         Accounts<span className="text-brand">Up</span>
       </span>
     </span>
