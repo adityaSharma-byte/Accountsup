@@ -10,22 +10,23 @@ import CaseStudy from "@/components/sections/CaseStudy";
 import Testimonials from "@/components/sections/Testimonials";
 import Faq from "@/components/sections/Faq";
 import CtaBand from "@/components/sections/CtaBand";
+import Reveal from "@/components/ui/Reveal";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <Stats />
+      <Reveal><Stats /></Reveal>
       <VideoSection />
-      <WhyUs />
-      <ServicesOverview />
-      <Industries />
-      <HowWeWork />
-      <DataSecurity />
-      <CaseStudy />
-      <Testimonials />
-      <Faq />
-      <CtaBand />
+      <Reveal><WhyUs /></Reveal>
+      <Reveal><ServicesOverview /></Reveal>
+      <Reveal><Industries /></Reveal>
+      <Reveal><HowWeWork /></Reveal>
+      <Reveal><DataSecurity /></Reveal>
+      <Reveal><CaseStudy /></Reveal>
+      <Reveal><Testimonials /></Reveal>
+      <Reveal><Faq /></Reveal>
+      <Reveal><CtaBand /></Reveal>
     </>
   );
 }
