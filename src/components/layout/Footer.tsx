@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Mail, Phone } from "lucide-react";
 import { site } from "@/content/site";
 import { serviceCategories } from "@/content/services";
+import { cpaCountries } from "@/content/cpaCountries";
 import { trustBadges } from "@/content/home";
 import Logo from "@/components/ui/Logo";
 
@@ -83,16 +84,27 @@ export default function Footer() {
               {shortLabels[cat.key] ?? cat.title}
             </h4>
             <ul className="space-y-2.5 text-sm">
-              {cat.services.slice(0, 6).map((s) => (
-                <li key={s.slug}>
-                  <Link
-                    href={`/services/${s.slug}`}
-                    className="transition-colors hover:text-brand"
-                  >
-                    {s.name}
-                  </Link>
-                </li>
-              ))}
+              {cat.key === "cpa"
+                ? cpaCountries.map((country) => (
+                    <li key={country.code}>
+                      <Link
+                        href={`/services/cpa/${country.code}`}
+                        className="transition-colors hover:text-brand"
+                      >
+                        {country.flag} {country.name}
+                      </Link>
+                    </li>
+                  ))
+                : cat.services.slice(0, 6).map((s) => (
+                    <li key={s.slug}>
+                      <Link
+                        href={`/services/${s.slug}`}
+                        className="transition-colors hover:text-brand"
+                      >
+                        {s.name}
+                      </Link>
+                    </li>
+                  ))}
             </ul>
           </div>
         ))}

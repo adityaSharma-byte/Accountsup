@@ -43,3 +43,4 @@ next-env.d.ts
 # local-only
 /AccountsUp_Brand_Video.mp4
 /.github/
+/.claude/
