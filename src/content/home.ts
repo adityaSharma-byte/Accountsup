@@ -1,56 +1,66 @@
 /**
  * Home-page content blocks.
  *
- * Stats, testimonials and the case study are ILLUSTRATIVE placeholders (the current
- * accountsup.com ships unfilled 0% stats). Replace with real, verifiable numbers and
- * quotes before publishing.
+ * Stats, testimonials and the case study are ILLUSTRATIVE placeholders —
+ * replace with real, verifiable numbers and quotes before publishing.
  */
 
 export const stats = [
-  { value: 50, suffix: "+", label: "Active corporate clients" },
-  { value: 99.8, decimals: 1, suffix: "%", label: "Ledger accuracy" },
-  { value: 2, suffix: "", label: "Countries — US & Canada" },
-  { display: "24/7", label: "Operations & support" },
+  { value: 100, suffix: "+", label: "Businesses & firms served" },
+  { value: 200, suffix: "+", label: "Finance professionals" },
+  { value: 4, suffix: "", label: "Continents served" },
+  { value: 99.8, decimals: 1, suffix: "%", label: "Accuracy rate" },
 ] as const;
 
 export const whyUs = [
   {
     icon: "globe",
-    title: "Dual-Country Compliance",
-    body: "US GAAP and Canadian CRA mastery under one roof — so your cross-border obligations are handled without hand-offs or gaps.",
+    title: "One Global Partner",
+    body: "Your entire finance function — bookkeeping to CFO — across the US, Canada, UK, Australia and beyond, under one roof.",
   },
   {
     icon: "user-check",
-    title: "Dedicated Ledger Partner",
-    body: "A single point of contact who understands your entity structure, close calendar, and reporting needs — not a rotating ticket queue.",
+    title: "Dedicated Expert Teams",
+    body: "A trained team that learns your business and stays with you — not a rotating ticket queue.",
   },
   {
     icon: "shield-check",
     title: "Audit-Ready, Always",
-    body: "Multi-level review and clean documentation trails mean your books hold up to scrutiny every cycle, not just at year-end.",
+    body: "Multi-level review and clean documentation trails mean your books hold up to scrutiny every cycle.",
   },
   {
     icon: "coins",
-    title: "Multi-Currency Fluency",
-    body: "USD, CAD, EUR and GBP closes handled cleanly, with intercompany eliminations and FX handled as routine, not exceptions.",
+    title: "AI-Powered Accuracy",
+    body: "Automation paired with expert human review for precision, faster turnaround, and fewer errors.",
   },
   {
     icon: "plug",
-    title: "Platform-Agnostic",
-    body: "We work inside your stack — QuickBooks, Xero, NetSuite, Sage Intacct, and the payroll platforms you already run.",
+    title: "Works In Your Stack",
+    body: "QuickBooks, Xero, NetSuite, Sage, ADP — we operate inside the platforms you already run.",
   },
   {
     icon: "lock",
-    title: "Institutional-Grade Security",
-    body: "Role-based access, multi-factor authentication, and encrypted, controlled data transfer with full audit trails.",
+    title: "Enterprise-Grade Security",
+    body: "Role-based access, multi-factor authentication, encryption, and full audit trails on every engagement.",
   },
+] as const;
+
+export const industries = [
+  { name: "CPA & Accounting Firms", icon: "landmark" },
+  { name: "SaaS & Technology", icon: "cpu" },
+  { name: "E-commerce & Retail", icon: "shopping-bag" },
+  { name: "Real Estate", icon: "building-2" },
+  { name: "Healthcare", icon: "activity" },
+  { name: "Manufacturing", icon: "factory" },
+  { name: "Startups & Scale-ups", icon: "rocket" },
+  { name: "Professional Services", icon: "briefcase" },
 ] as const;
 
 export const howWeWork = [
   {
     step: "01",
     title: "Discovery",
-    body: "We learn your entities, jurisdictions, systems, and close calendar to scope the right engagement.",
+    body: "We learn your entities, jurisdictions, systems, and calendar to scope the right engagement.",
   },
   {
     step: "02",
@@ -60,17 +70,17 @@ export const howWeWork = [
   {
     step: "03",
     title: "Secure Onboarding",
-    body: "We connect to your ledgers and payroll systems through controlled, audited access.",
+    body: "We connect to your systems through controlled, audited access — without disrupting your close.",
   },
   {
     step: "04",
     title: "Deliver & Reconcile",
-    body: "Every close follows a structured workflow with multi-level quality review.",
+    body: "Every deliverable follows a structured workflow with multi-level quality review.",
   },
   {
     step: "05",
     title: "Ongoing Partnership",
-    body: "Monthly reporting, planning sessions, and responsive support as your business scales.",
+    body: "Reporting, planning sessions, and responsive support as your business scales.",
   },
 ] as const;
 
@@ -86,17 +96,17 @@ export const caseStudy = {
   eyebrow: "Case Study",
   headline: "Cut month-end close from 12 days to 4",
   problem:
-    "A cross-border SaaS company was closing books manually across its US and Canadian entities. Multi-currency errors and manual reconciliation were delaying investor reporting every month.",
+    "A fast-scaling company was closing books manually across multiple entities and jurisdictions, with reconciliation errors delaying investor reporting every month.",
   solution: [
-    "Rebuilt a GAAP-compliant chart of accounts across both entities",
+    "Rebuilt a compliant chart of accounts across all entities",
     "Automated multi-currency reconciliation and intercompany eliminations",
     "Standardized a repeatable four-day close calendar",
-    "Centralized US + Canada compliance under one dedicated partner",
+    "Centralized bookkeeping, payroll, and tax under one partner",
   ],
   result: "Month-end close reduced by 66%, with audit-ready statements every cycle.",
   quote:
-    "AccountsUp took our messy two-country books and gave us a clean, predictable close. We finally trust our numbers.",
-  attribution: "Controller — Cross-border SaaS company",
+    "AccountsUp took our messy multi-entity books and gave us a clean, predictable close. We finally trust our numbers.",
+  attribution: "Controller — Multi-entity technology company",
 } as const;
 
 export const testimonials = [
@@ -108,13 +118,19 @@ export const testimonials = [
   },
   {
     quote:
-      "Managing payroll across the US and Canada used to be a nightmare. Now it just runs, correctly, every cycle.",
+      "As a CPA firm, AccountsUp is the back office that lets us take on more clients without more hires.",
+    name: "Jennifer Adams",
+    role: "Partner, CPA Firm",
+  },
+  {
+    quote:
+      "Managing payroll and tax across regions used to be a nightmare. Now it just runs, correctly, every cycle.",
     name: "Priya Nair",
     role: "Head of People Ops",
   },
   {
     quote:
-      "Their cross-border tax team caught nexus and GST/HST issues our previous firm missed entirely.",
+      "Their team caught nexus and VAT issues our previous provider missed entirely. Real expertise.",
     name: "David Thompson",
     role: "Founder, E-commerce",
   },
@@ -126,7 +142,7 @@ export const testimonials = [
   },
   {
     quote:
-      "A single dedicated partner who actually understands our entity structure. Responsive and precise.",
+      "A single dedicated partner who actually understands our structure. Responsive, precise, global.",
     name: "James Rodriguez",
     role: "Financial Controller",
   },
@@ -135,15 +151,19 @@ export const testimonials = [
 export const faqs = [
   {
     q: "Which countries do you serve?",
-    a: "We specialize in the United States and Canada, including the cross-border obligations that come with operating in both.",
+    a: "We support clients worldwide, with deep coverage across the US, Canada, the UK, and Australia/NZ — including the cross-border obligations that come with operating in multiple regions.",
   },
   {
-    q: "Which accounting and payroll platforms do you support?",
-    a: "For bookkeeping: QuickBooks Online, Xero, Wave, Sage Intacct, and NetSuite. For payroll: ADP, Gusto, Ceridian Dayforce, Paylocity, and Rippling. If you run something else, ask us.",
+    q: "Which services can you provide?",
+    a: "The full finance function: bookkeeping, taxation, sales tax / VAT / GST, audit support, financial statements, virtual CFO, payroll, and FP&A — plus technology, HR operations, virtual assistance, and healthcare RCM.",
   },
   {
-    q: "Can you handle bookkeeping, payroll, and tax together?",
-    a: "Yes. Most clients engage us across all three so their ledger, payroll, and cross-border tax compliance stay in sync under one partner.",
+    q: "Which platforms do you support?",
+    a: "For accounting: QuickBooks Online, Xero, Wave, Sage Intacct, and NetSuite. For payroll: ADP, Gusto, Ceridian Dayforce, Paylocity, and Rippling. If you run something else, ask us.",
+  },
+  {
+    q: "Can you white-label for our CPA firm?",
+    a: "Yes. We work behind the scenes as your back office — your brand, your client relationship, our capacity and expertise.",
   },
   {
     q: "How do you keep our financial data secure?",
@@ -159,10 +179,14 @@ export const faqs = [
   },
 ] as const;
 
-export const events = [
-  "Accountex",
-  "AICPA Engage",
-  "QuickBooks Connect",
-  "Xerocon",
-  "Sage Transform",
+// Honest capability / platform strip — NOT accreditation logos.
+export const trustBadges = [
+  "US GAAP",
+  "IFRS",
+  "Canadian CRA",
+  "UK / EU VAT",
+  "QuickBooks",
+  "Xero",
+  "NetSuite",
+  "Sage",
 ] as const;

@@ -1,31 +1,32 @@
 import type { Metadata } from "next";
-import { Target, Handshake, Globe, ShieldCheck } from "lucide-react";
+import { Globe, Briefcase, Handshake, ShieldCheck } from "lucide-react";
 import Container from "@/components/ui/Container";
 import PageHeader from "@/components/ui/PageHeader";
 import Stats from "@/components/sections/Stats";
 import CtaBand from "@/components/sections/CtaBand";
+import { media } from "@/content/media";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "AccountsUp is a corporate accounting partner delivering outsourced bookkeeping, payroll, and cross-border tax for growing US and Canadian companies.",
+    "AccountsUp is a full-service global accounting and finance partner for CPA firms and growing businesses worldwide.",
 };
 
 const values = [
   {
-    icon: Target,
-    title: "Precision over volume",
-    body: "We stay focused on three services and do them to an institutional standard — rather than spreading thin across dozens.",
+    icon: Globe,
+    title: "Global by design",
+    body: "One partner across the US, Canada, UK, and Australia — your obligations handled wherever you operate.",
+  },
+  {
+    icon: Briefcase,
+    title: "Full-service, end to end",
+    body: "Bookkeeping to CFO, tax to technology — the complete finance function under one roof.",
   },
   {
     icon: Handshake,
     title: "Partnership, not tickets",
-    body: "A dedicated team that learns your business and stays with you, not a rotating support queue.",
-  },
-  {
-    icon: Globe,
-    title: "Cross-border by design",
-    body: "US and Canadian compliance handled together, so nothing falls between jurisdictions.",
+    body: "Dedicated teams that learn your business and stay with you, not a rotating support queue.",
   },
   {
     icon: ShieldCheck,
@@ -39,8 +40,8 @@ export default function AboutPage() {
     <>
       <PageHeader
         eyebrow="About AccountsUp"
-        title="Institutional-grade finance, built for cross-border teams"
-        subtitle="We embed bookkeeping, payroll, and tax compliance for growing corporations across the US and Canada."
+        title="Your global accounting and finance partner"
+        subtitle="We run the finance function for CPA firms and growing businesses around the world — so their teams can focus on what they do best."
       />
 
       <section className="bg-white py-20 sm:py-24">
@@ -51,27 +52,37 @@ export default function AboutPage() {
                 Who we are
               </p>
               <h2 className="mt-3 text-3xl font-bold text-ink sm:text-4xl">
-                Your outsourced financial infrastructure
+                One partner for the entire finance function
               </h2>
             </div>
             <div className="space-y-4 leading-relaxed text-body">
               <p>
-                AccountsUp is a corporate accounting partner for companies
-                operating across the United States and Canada. We take on the
-                back-office finance function — bookkeeping, payroll, and
-                cross-border tax — so your team can focus on running the business.
+                AccountsUp is a full-service global accounting and finance
+                partner. We take on the complete back-office function —
+                bookkeeping, tax, audit, payroll, virtual CFO, reporting,
+                technology, and support — for CPA firms and growing companies
+                across the US, Canada, the UK, and beyond.
               </p>
               <p>
                 We work as an extension of your team inside the systems you
-                already use, with a single dedicated partner who understands your
-                entity structure, your close calendar, and your reporting needs.
+                already use, pairing dedicated experts with AI-driven automation
+                for precision, speed, and scale — without the overhead of hiring.
               </p>
               <p>
-                Whether you need a clean monthly close, error-free payroll across
-                jurisdictions, or coordinated IRS and CRA compliance, the goal is
-                the same: books you can trust, every cycle.
+                Whether you&apos;re a CPA firm that needs white-label capacity or a
+                business that wants its whole finance operation handled, the goal
+                is the same: numbers you can trust, every cycle.
               </p>
             </div>
+          </div>
+
+          <div className="mt-14 overflow-hidden rounded-3xl shadow-lg">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={media.partnership}
+              alt="AccountsUp advisors working with a client"
+              className="aspect-[21/9] w-full object-cover"
+            />
           </div>
         </Container>
       </section>

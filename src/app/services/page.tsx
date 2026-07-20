@@ -1,28 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import {
-  BookOpenCheck,
-  Wallet,
-  FileCheck,
-  Check,
-  ArrowRight,
-  type LucideIcon,
-} from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 import Container from "@/components/ui/Container";
 import PageHeader from "@/components/ui/PageHeader";
 import CtaBand from "@/components/sections/CtaBand";
-import { services, type Service } from "@/content/services";
+import Icon from "@/components/ui/Icon";
+import { serviceCategories } from "@/content/services";
 
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Outsourced bookkeeping, managed payroll, and cross-border tax compliance for growing US and Canadian corporations.",
-};
-
-const icons: Record<Service["icon"], LucideIcon> = {
-  ledger: BookOpenCheck,
-  payroll: Wallet,
-  tax: FileCheck,
+    "Full-service global accounting and finance — bookkeeping, tax, audit, payroll, virtual CFO, reporting, technology, and business support.",
 };
 
 export default function ServicesPage() {
@@ -30,91 +18,60 @@ export default function ServicesPage() {
     <>
       <PageHeader
         eyebrow="Our Services"
-        title="Comprehensive back-office accounting for US & Canadian corporations"
-        subtitle="From day-to-day bookkeeping to complex cross-border tax compliance — a deliberately focused set of services, delivered to an institutional standard."
+        title="A complete finance function, delivered globally"
+        subtitle="Everything from day-to-day bookkeeping to virtual CFO, technology, and business support — organized into four focused service lines."
       />
 
       <section className="bg-white py-16 sm:py-20">
         <Container>
-          <div className="space-y-8">
-            {services.map((s, idx) => {
-              const Icon = icons[s.icon];
-              return (
-                <article
-                  key={s.slug}
-                  id={s.slug}
-                  className="grid scroll-mt-28 gap-8 rounded-3xl border border-line bg-white p-8 sm:p-10 lg:grid-cols-12 lg:gap-10"
-                >
-                  <div className="lg:col-span-5">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-navy text-white">
-                      <Icon size={24} />
-                    </div>
-                    <p className="mt-5 text-xs font-bold uppercase tracking-wider text-brand">
-                      Service 0{idx + 1} · {s.short}
-                    </p>
-                    <h2 className="mt-1 text-2xl font-bold text-ink">{s.name}</h2>
-                    <p className="mt-4 leading-relaxed text-body">{s.description}</p>
-                    <Link
-                      href="/contact"
-                      className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-navy transition-colors hover:text-brand"
+          <div className="space-y-16">
+            {serviceCategories.map((cat) => (
+              <div key={cat.key} id={cat.key} className="scroll-mt-28">
+                <div className="max-w-2xl">
+                  <h2 className="text-2xl font-bold text-ink sm:text-3xl">{cat.title}</h2>
+                  <p className="mt-3 leading-relaxed text-body">{cat.blurb}</p>
+                </div>
+                <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                  {cat.services.map((s) => (
+                    <div
+                      key={s.slug}
+                      id={s.slug}
+                      className="flex scroll-mt-28 flex-col rounded-2xl border border-line bg-white p-6 transition-all hover:border-brand/40 hover:shadow-lg"
                     >
-                      Talk to an expert <ArrowRight size={15} />
-                    </Link>
-                  </div>
-
-                  <div className="lg:col-span-7">
-                    <p className="text-sm font-bold text-ink">What&apos;s included</p>
-                    <ul className="mt-4 grid gap-3 sm:grid-cols-2">
-                      {s.features.map((f) => (
-                        <li key={f} className="flex items-start gap-2.5">
-                          <Check size={16} className="mt-0.5 shrink-0 text-brand" />
-                          <span className="text-sm leading-relaxed text-body">{f}</span>
-                        </li>
-                      ))}
-                    </ul>
-
-                    {s.platforms && (
-                      <div className="mt-7">
-                        <p className="text-sm font-bold text-ink">
-                          Platforms we work in
-                        </p>
-                        <div className="mt-3 flex flex-wrap gap-2">
-                          {s.platforms.map((p) => (
-                            <span
-                              key={p}
-                              className="rounded-full border border-line bg-cream px-3 py-1 text-xs font-medium text-navy"
+                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-soft text-brand">
+                        <Icon name={s.icon} size={22} />
+                      </div>
+                      <h3 className="mt-5 text-lg font-bold text-ink">{s.name}</h3>
+                      <p className="mt-2 flex-1 text-sm leading-relaxed text-body">
+                        {s.description}
+                      </p>
+                      {s.features && (
+                        <ul className="mt-4 space-y-2 border-t border-line pt-4">
+                          {s.features.map((f) => (
+                            <li
+                              key={f}
+                              className="flex items-start gap-2 text-sm text-body"
                             >
-                              {p}
-                            </span>
+                              <Check size={15} className="mt-0.5 shrink-0 text-brand" />
+                              {f}
+                            </li>
                           ))}
-                        </div>
-                      </div>
-                    )}
+                        </ul>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
 
-                    {s.scope && (
-                      <div className="mt-7 grid gap-4 sm:grid-cols-2">
-                        {s.scope.map((sc) => (
-                          <div key={sc.label} className="rounded-2xl bg-cream p-5">
-                            <p className="text-sm font-bold text-navy">{sc.label}</p>
-                            <ul className="mt-3 space-y-1.5">
-                              {sc.items.map((it) => (
-                                <li
-                                  key={it}
-                                  className="flex items-center gap-2 text-xs text-body"
-                                >
-                                  <span className="h-1 w-1 rounded-full bg-brand" />
-                                  {it}
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                </article>
-              );
-            })}
+          <div className="mt-16 text-center">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-navy transition-colors hover:text-brand"
+            >
+              Not sure where to start? Talk to an expert <ArrowRight size={15} />
+            </Link>
           </div>
         </Container>
       </section>

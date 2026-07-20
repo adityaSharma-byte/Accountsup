@@ -1,7 +1,9 @@
 import Hero from "@/components/sections/Hero";
 import Stats from "@/components/sections/Stats";
+import VideoSection from "@/components/sections/VideoSection";
 import WhyUs from "@/components/sections/WhyUs";
 import ServicesOverview from "@/components/sections/ServicesOverview";
+import Industries from "@/components/sections/Industries";
 import HowWeWork from "@/components/sections/HowWeWork";
 import DataSecurity from "@/components/sections/DataSecurity";
 import CaseStudy from "@/components/sections/CaseStudy";
@@ -14,8 +16,10 @@ export default function Home() {
     <>
       <Hero />
       <Stats />
+      <VideoSection />
       <WhyUs />
       <ServicesOverview />
+      <Industries />
       <HowWeWork />
       <DataSecurity />
       <CaseStudy />
