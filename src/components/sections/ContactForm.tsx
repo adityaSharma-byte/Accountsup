@@ -4,14 +4,13 @@ import { useState } from "react";
 import { Send, CheckCircle2 } from "lucide-react";
 import { site } from "@/content/site";
 
-const PLACEHOLDER_KEY = "REPLACE_WITH_WEB3FORMS_ACCESS_KEY";
 type Status = "idle" | "sending" | "success" | "error";
 
 /**
- * Static-export-friendly lead form. When a Web3Forms access key is configured
- * in site.formAccessKey, submissions are POSTed to Web3Forms, which emails them
- * to the AccountsUp inbox. Until then it falls back to opening the email app, so
- * the form is never a dead end.
+ * Static-export lead form. Submissions POST to FormSubmit (no account / no API
+ * key), which emails every lead to site.email and CCs site.emailOps.
+ * The first submission triggers a one-time "Activate" email to site.email;
+ * after it's confirmed once, all future leads are delivered automatically.
  */
 export default function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
@@ -20,41 +19,36 @@ export default function ContactForm() {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
-    const name = String(data.get("name") || "");
-    const email = String(data.get("email") || "");
-    const company = String(data.get("company") || "");
-    const address = String(data.get("address") || "");
-    const message = String(data.get("message") || "");
 
-    // Fallback: no form service configured yet → open the email client.
-    if (!site.formAccessKey || site.formAccessKey === PLACEHOLDER_KEY) {
-      const subject = encodeURIComponent(`New consultation request from ${name}`);
-      const body = encodeURIComponent(
-        `Name: ${name}\nWork email: ${email}\nCompany: ${company}\nAddress: ${address}\n\nHow can we help:\n${message}`
-      );
-      window.location.href = `mailto:${site.email}?subject=${subject}&body=${body}`;
+    // Honeypot: bots fill hidden fields — silently drop them.
+    if (data.get("_honey")) {
       setStatus("success");
       return;
     }
 
+    const name = String(data.get("name") || "");
     setStatus("sending");
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          access_key: site.formAccessKey,
-          subject: `New consultation request from ${name || "website"}`,
-          from_name: name || "AccountsUp website",
-          Name: name,
-          "Work email": email,
-          Company: company,
-          Address: address,
-          Message: message,
-        }),
-      });
+      const res = await fetch(
+        `https://formsubmit.co/ajax/${encodeURIComponent(site.email)}`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify({
+            _subject: `New consultation request from ${name || "website"}`,
+            _template: "table",
+            _captcha: "false",
+            _cc: site.emailOps,
+            Name: name,
+            "Work email": String(data.get("email") || ""),
+            Company: String(data.get("company") || ""),
+            Address: String(data.get("address") || ""),
+            "How can we help": String(data.get("message") || ""),
+          }),
+        }
+      );
       const json = await res.json();
-      if (json.success) {
+      if (res.ok && (json.success === "true" || json.success === true)) {
         setStatus("success");
         form.reset();
       } else {
@@ -73,7 +67,7 @@ export default function ContactForm() {
         </span>
         <h3 className="mt-5 text-xl font-bold text-ink">Thanks — we&apos;ve got it</h3>
         <p className="mt-2 max-w-sm leading-relaxed text-body">
-          Your request is on its way to our team. We&apos;ll get back to you within
+          Your message is on its way to our team. We&apos;ll get back to you within
           one business day.
         </p>
       </div>
@@ -87,8 +81,8 @@ export default function ContactForm() {
     >
       {/* honeypot */}
       <input
-        type="checkbox"
-        name="botcheck"
+        type="text"
+        name="_honey"
         tabIndex={-1}
         autoComplete="off"
         className="hidden"

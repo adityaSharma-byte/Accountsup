@@ -16,11 +16,11 @@ export const site = {
   phoneCountry: "USA",
   availability: "24/7 Global Operations & Support",
 
-  // Lead capture: get a FREE access key in ~1 min at https://web3forms.com by
-  // entering info@accountsup.com — every form submission is then emailed there
-  // (add operations@accountsup.com as a CC in the Web3Forms dashboard). Paste
-  // the key below. Until it's set, the form falls back to opening the email app.
-  formAccessKey: "REPLACE_WITH_WEB3FORMS_ACCESS_KEY",
+  // Lead capture: the contact form POSTs to FormSubmit (no account, no API key)
+  // and delivers every submission to `email` below, CC'ing `emailOps`. The FIRST
+  // time a lead is submitted, FormSubmit emails a one-time "Activate" link to
+  // `email` — click it once and all future submissions arrive automatically.
+  // To change the recipient, just change `email` above.
 
   ctaPrimary: { label: "Book a Consultation", href: "/contact" },
   ctaSecondary: { label: "Talk to an Expert", href: "/contact" },
