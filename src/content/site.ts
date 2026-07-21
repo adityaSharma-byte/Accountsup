@@ -21,7 +21,7 @@ export const site = {
   // copy the key it shows you — then paste it below. Submissions are then emailed
   // to that address automatically (the form CCs operations@accountsup.com).
   // Until a real key is set, the form safely opens the email app instead.
-  formAccessKey: "REPLACE_WITH_WEB3FORMS_ACCESS_KEY",
+  formAccessKey: "dffbc368-de7e-44f1-92c2-3bceeba2a788",
 
   ctaPrimary: { label: "Book a Consultation", href: "/contact" },
   ctaSecondary: { label: "Talk to an Expert", href: "/contact" },
