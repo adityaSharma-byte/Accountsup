@@ -155,7 +155,7 @@ export const faqs = [
   },
   {
     q: "Which services can you provide?",
-    a: "The full finance function: bookkeeping, taxation, sales tax / VAT / GST, audit support, financial statements, virtual CFO, payroll, and FP&A — plus technology, HR operations, virtual assistance, and healthcare RCM.",
+    a: "The full finance function: bookkeeping, taxation, sales tax / VAT / GST, audit support, financial statements, virtual CFO, payroll, and FP&A — for CPA firms (organized by country) and for growing businesses (organized by function).",
   },
   {
     q: "Which platforms do you support?",

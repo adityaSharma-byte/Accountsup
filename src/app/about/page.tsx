@@ -57,11 +57,10 @@ export default function AboutPage() {
             </div>
             <div className="space-y-4 leading-relaxed text-body">
               <p>
-                AccountsUp is a full-service global accounting and finance
-                partner. We take on the complete back-office function —
-                bookkeeping, tax, audit, payroll, virtual CFO, reporting,
-                technology, and support — for CPA firms and growing companies
-                across the US, Canada, the UK, and beyond.
+                AccountsUp is a global accounting and finance partner. We take
+                on the complete back-office function — bookkeeping, tax, audit,
+                payroll, virtual CFO, and reporting — for CPA firms and growing
+                businesses across the US, Canada, the UK, Australia, and beyond.
               </p>
               <p>
                 We work as an extension of your team inside the systems you

@@ -1,6 +1,8 @@
 /**
- * Full AccountsUp service suite — global, full-service positioning.
- * Organized into categories; every service has an original description.
+ * AccountsUp service suite — focused on two accounting families, mirroring
+ * the Global FPO model: Accounting for CPA firms (organized by country) and
+ * Accounting for Businesses (organized by function).
+ *
  * `icon` is a kebab-case key mapped to a lucide icon in the components
  * (with a safe fallback), so a missing icon never breaks the build.
  */
@@ -183,78 +185,6 @@ export const serviceCategories: ServiceCategory[] = [
       },
     ],
   },
-  {
-    key: "technology",
-    title: "Technology & Automation",
-    blurb:
-      "Modernize how your finance function runs — automation, analytics, and custom builds that remove manual work and unlock insight.",
-    services: [
-      {
-        slug: "power-platform",
-        name: "Power Platform & SharePoint",
-        icon: "cpu",
-        description:
-          "Automate workflows and build internal apps and portals on Power Automate, Power Apps, and SharePoint.",
-      },
-      {
-        slug: "bi",
-        name: "Business Intelligence & Analytics",
-        icon: "database",
-        description:
-          "Dashboards and analytics that turn scattered financial data into a single, clear source of truth.",
-      },
-      {
-        slug: "web-dev",
-        name: "Web Application Development",
-        icon: "code",
-        description:
-          "Full-spectrum web and application development for finance and operations use cases.",
-      },
-      {
-        slug: "design",
-        name: "Graphic & Web Design",
-        icon: "palette",
-        description:
-          "Clean, on-brand design for decks, reports, dashboards, and digital presence.",
-      },
-      {
-        slug: "integration",
-        name: "Integration & Migration",
-        icon: "workflow",
-        description:
-          "Seamless data migration and system integration across your accounting and business stack.",
-      },
-    ],
-  },
-  {
-    key: "support",
-    title: "Business Support Services",
-    blurb:
-      "Extend your team with reliable, cost-effective operational support built around your workflows.",
-    services: [
-      {
-        slug: "hr",
-        name: "HR Operations",
-        icon: "briefcase",
-        description:
-          "Employee lifecycle administration, onboarding, records, and day-to-day HR process support.",
-      },
-      {
-        slug: "va",
-        name: "Virtual Assistance",
-        icon: "headset",
-        description:
-          "Trained virtual assistants for admin, scheduling, research, and daily operational tasks.",
-      },
-      {
-        slug: "rcm",
-        name: "Healthcare Revenue Cycle Management",
-        icon: "activity",
-        description:
-          "End-to-end RCM — coding, billing, claims, and collections — to optimize healthcare revenue.",
-      },
-    ],
-  },
 ];
 
 /** Flattened list of every service. */
@@ -269,8 +199,12 @@ export const featuredSlugs = [
   "payroll",
   "reporting",
   "fpna",
-  "bi",
+  "p2p",
 ];
 export const featuredServices: Service[] = featuredSlugs
   .map((slug) => allServices.find((s) => s.slug === slug))
   .filter((s): s is Service => Boolean(s));
+
+/** The business-function services (the "Accounting for Businesses" family). */
+export const businessServices: Service[] =
+  serviceCategories.find((c) => c.key === "business")?.services ?? [];

@@ -11,7 +11,7 @@ import { cpaCountries } from "@/content/cpaCountries";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Full-service global accounting and finance — bookkeeping, tax, audit, payroll, virtual CFO, reporting, technology, and business support.",
+    "Global accounting and finance outsourcing — bookkeeping, tax, audit, payroll, virtual CFO, and reporting — for CPA firms and growing businesses.",
 };
 
 export default function ServicesPage() {
@@ -20,7 +20,7 @@ export default function ServicesPage() {
       <PageHeader
         eyebrow="Our Services"
         title="A complete finance function, delivered globally"
-        subtitle="Everything from day-to-day bookkeeping to virtual CFO, technology, and business support — organized into four focused service lines. Explore any service for the full detail."
+        subtitle="Everything from day-to-day bookkeeping to virtual CFO — organized into two clear paths: white-label work for CPA firms, and full-function finance for businesses. Explore any service for the full detail."
       />
 
       <section className="bg-white py-16 sm:py-20">

@@ -30,9 +30,9 @@ export default function Hero() {
             <span className="text-brand">handled worldwide</span>
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/80">
-            Bookkeeping, tax, audit, payroll, virtual CFO, reporting, and
-            technology — delivered by dedicated expert teams for CPA firms and
-            growing businesses across the globe.
+            Bookkeeping, tax, audit, payroll, virtual CFO, and reporting —
+            delivered by dedicated expert teams for CPA firms and growing
+            businesses across the globe.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <Button href={site.ctaPrimary.href} className="w-full sm:w-auto">

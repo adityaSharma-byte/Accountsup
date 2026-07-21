@@ -6,7 +6,7 @@ export const site = {
   domain: "accountsup.com",
   tagline: "Global Accounting & Finance Partner",
   description:
-    "AccountsUp is a full-service global accounting and finance partner — bookkeeping, tax, audit, payroll, virtual CFO, reporting, technology, and business support — for CPA firms and growing companies worldwide.",
+    "AccountsUp is a global accounting and finance partner — bookkeeping, tax, audit, payroll, virtual CFO, and reporting — for CPA firms and growing businesses worldwide.",
 
   // --- Contact ---
   email: "info@accountsup.com",

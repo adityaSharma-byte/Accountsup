@@ -3,6 +3,7 @@ import { Mail, Phone } from "lucide-react";
 import { site } from "@/content/site";
 import { serviceCategories } from "@/content/services";
 import { cpaCountries } from "@/content/cpaCountries";
+import { industries } from "@/content/industries";
 import { trustBadges } from "@/content/home";
 import Logo from "@/components/ui/Logo";
 
@@ -108,6 +109,48 @@ export default function Footer() {
             </ul>
           </div>
         ))}
+
+        <div>
+          <h4 className="mb-4 text-sm font-semibold text-white">Industries</h4>
+          <ul className="space-y-2.5 text-sm">
+            {industries.slice(0, 6).map((i) => (
+              <li key={i.slug}>
+                <Link
+                  href={`/industries/${i.slug}`}
+                  className="transition-colors hover:text-brand"
+                >
+                  {i.short}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="mb-4 text-sm font-semibold text-white">Company</h4>
+          <ul className="space-y-2.5 text-sm">
+            <li>
+              <Link href="/about" className="transition-colors hover:text-brand">
+                About
+              </Link>
+            </li>
+            <li>
+              <Link href="/industries" className="transition-colors hover:text-brand">
+                Industries
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" className="transition-colors hover:text-brand">
+                Contact
+              </Link>
+            </li>
+            <li>
+              <Link href="/services" className="transition-colors hover:text-brand">
+                All services
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
 
       <div className="border-t border-white/10">
