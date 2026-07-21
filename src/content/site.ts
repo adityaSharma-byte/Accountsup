@@ -1,8 +1,5 @@
 /**
  * Global site configuration — brand, contact, navigation, socials.
- *
- * NOTE: phone numbers are PLACEHOLDERS (555-xxxx / 0000 are not real).
- * Replace with real numbers before publishing.
  */
 export const site = {
   name: "AccountsUp",
@@ -11,11 +8,10 @@ export const site = {
   description:
     "AccountsUp is a full-service global accounting and finance partner — bookkeeping, tax, audit, payroll, virtual CFO, reporting, technology, and business support — for CPA firms and growing companies worldwide.",
 
-  // --- Contact (replace placeholders) ---
+  // --- Contact ---
   email: "info@accountsup.com",
   emailOps: "operations@accountsup.com",
-  phoneUS: "+1 (800) 555-1234",
-  phoneCA: "+1 (888) 555-1234",
+  phone: "+1 213 456 8222",
   availability: "24/7 Global Operations & Support",
 
   ctaPrimary: { label: "Book a Consultation", href: "/contact" },

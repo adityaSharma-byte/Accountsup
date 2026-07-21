@@ -119,9 +119,12 @@ export default function Footer() {
             >
               <Mail size={15} className="text-brand" /> {site.email}
             </a>
-            <span className="inline-flex items-center gap-2">
-              <Phone size={15} className="text-brand" /> {site.phoneUS}
-            </span>
+            <a
+              href={`tel:${site.phone.replace(/[^+\d]/g, "")}`}
+              className="inline-flex items-center gap-2 hover:text-brand"
+            >
+              <Phone size={15} className="text-brand" /> {site.phone}
+            </a>
             <span className="text-white/50">{site.availability}</span>
           </div>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-white/60">
