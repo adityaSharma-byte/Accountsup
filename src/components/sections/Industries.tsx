@@ -8,7 +8,7 @@ import { industries } from "@/content/industries";
 
 export default function Industries() {
   return (
-    <section id="industries" className="scroll-mt-24 bg-navy py-20 text-white sm:py-24">
+    <section id="industries" className="scroll-mt-24 bg-navy py-16 text-white sm:py-20">
       <Container>
         <SectionHeading
           eyebrow="Industries"

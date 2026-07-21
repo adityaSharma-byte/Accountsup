@@ -109,42 +109,50 @@ export const caseStudy = {
   attribution: "Controller — Multi-entity technology company",
 } as const;
 
+// NOTE: illustrative placeholder testimonials (names, quotes, and avatar photos
+// are representative, not real clients) — replace with genuine client quotes.
 export const testimonials = [
   {
     quote:
       "Our bookkeeping and monthly reporting are finally accurate and on time. AccountsUp feels like an in-house team.",
     name: "Michael Carter",
     role: "CFO, B2B Services",
+    avatar: "michael",
   },
   {
     quote:
       "As a CPA firm, AccountsUp is the back office that lets us take on more clients without more hires.",
     name: "Jennifer Adams",
     role: "Partner, CPA Firm",
+    avatar: "jennifer",
   },
   {
     quote:
       "Managing payroll and tax across regions used to be a nightmare. Now it just runs, correctly, every cycle.",
     name: "Priya Nair",
     role: "Head of People Ops",
+    avatar: "priya",
   },
   {
     quote:
       "Their team caught nexus and VAT issues our previous provider missed entirely. Real expertise.",
     name: "David Thompson",
     role: "Founder, E-commerce",
+    avatar: "david",
   },
   {
     quote:
       "Clean documentation, multi-level review, zero surprises at audit. Exactly what we needed as we scaled.",
     name: "Sarah Mitchell",
     role: "VP Finance, SaaS",
+    avatar: "sarah",
   },
   {
     quote:
       "A single dedicated partner who actually understands our structure. Responsive, precise, global.",
     name: "James Rodriguez",
     role: "Financial Controller",
+    avatar: "james",
   },
 ] as const;
 

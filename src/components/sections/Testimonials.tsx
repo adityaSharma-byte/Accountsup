@@ -3,11 +3,12 @@
 import { Star } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { testimonials } from "@/content/home";
+import { avatar } from "@/content/media";
 
 export default function Testimonials() {
   const items = [...testimonials, ...testimonials];
   return (
-    <section className="overflow-hidden bg-cream py-20 sm:py-24">
+    <section className="overflow-hidden bg-cream py-16 sm:py-20">
       <div className="container-x">
         <SectionHeading
           eyebrow="Testimonials"
@@ -30,9 +31,17 @@ export default function Testimonials() {
               <blockquote className="mt-4 text-sm leading-relaxed text-body">
                 “{t.quote}”
               </blockquote>
-              <figcaption className="mt-5">
-                <p className="text-sm font-bold text-ink">{t.name}</p>
-                <p className="text-xs text-muted">{t.role}</p>
+              <figcaption className="mt-5 flex items-center gap-3">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={avatar(t.avatar)}
+                  alt={t.name}
+                  className="h-11 w-11 rounded-full object-cover ring-2 ring-brand/20"
+                />
+                <div>
+                  <p className="text-sm font-bold text-ink">{t.name}</p>
+                  <p className="text-xs text-muted">{t.role}</p>
+                </div>
               </figcaption>
             </figure>
           ))}

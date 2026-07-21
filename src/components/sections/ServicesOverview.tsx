@@ -19,7 +19,7 @@ export default function ServicesOverview() {
   const [tab, setTab] = useState("cpa");
 
   return (
-    <section className="bg-cream py-20 sm:py-24">
+    <section className="bg-cream py-16 sm:py-20">
       <Container>
         <SectionHeading
           eyebrow="Our Solutions"

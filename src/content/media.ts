@@ -7,6 +7,9 @@
 const BP = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 export const asset = (p: string) => `${BP}${p}`;
 
+/** Client-avatar image for a testimonial (files in /public/img/avatars). */
+export const avatar = (name: string) => asset(`/img/avatars/${name}.jpg`);
+
 export const media = {
   hero: asset("/img/hero.png"),
   partnership: asset("/img/partnership.png"),

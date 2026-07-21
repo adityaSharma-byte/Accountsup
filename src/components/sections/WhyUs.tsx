@@ -22,7 +22,7 @@ const icons: Record<string, LucideIcon> = {
 
 export default function WhyUs() {
   return (
-    <section className="bg-white py-20 sm:py-24">
+    <section className="bg-white py-16 sm:py-20">
       <Container>
         <SectionHeading
           eyebrow="Why AccountsUp"

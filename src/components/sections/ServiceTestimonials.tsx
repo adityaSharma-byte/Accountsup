@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Star } from "lucide-react";
 import { testimonials } from "@/content/home";
+import { avatar } from "@/content/media";
 
 export default function ServiceTestimonials() {
   const [i, setI] = useState(0);
@@ -30,9 +31,17 @@ export default function ServiceTestimonials() {
       >
         &ldquo;{t.quote}&rdquo;
       </blockquote>
-      <div className="mt-6 text-sm">
-        <span className="font-bold text-ink">{t.name}</span>
-        <span className="text-muted"> — {t.role}</span>
+      <div className="mt-7 flex items-center justify-center gap-3">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={avatar(t.avatar)}
+          alt={t.name}
+          className="h-12 w-12 rounded-full object-cover ring-2 ring-brand/20"
+        />
+        <div className="text-left text-sm">
+          <div className="font-bold text-ink">{t.name}</div>
+          <div className="text-muted">{t.role}</div>
+        </div>
       </div>
       <div className="mt-7 flex justify-center gap-2">
         {testimonials.map((_, k) => (
