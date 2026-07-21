@@ -11,6 +11,7 @@ export const site = {
   // --- Contact ---
   email: "info@accountsup.com",
   emailOps: "operations@accountsup.com",
+  emailSales: "sales@accountsup.com",
   phone: "+1 213 456 8222",
   phoneFlag: "🇺🇸",
   phoneCountry: "USA",

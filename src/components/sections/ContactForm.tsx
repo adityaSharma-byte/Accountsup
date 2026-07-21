@@ -1,28 +1,21 @@
 "use client";
 
 import { useState } from "react";
-import { Send, CheckCircle2 } from "lucide-react";
+import { Send, CheckCircle2, AlertCircle } from "lucide-react";
 import { site } from "@/content/site";
 
 const PLACEHOLDER_KEY = "REPLACE_WITH_WEB3FORMS_ACCESS_KEY";
 type Status = "idle" | "sending" | "success" | "error";
 
 /**
- * Static-export lead form using Web3Forms (reliable, Cloudflare-backed).
- * Submissions are emailed to site.email, CC site.emailOps. If no access key is
- * configured yet — or if the request fails for any reason — it falls back to
- * opening the visitor's email app, so the form never dead-ends on an error.
+ * Contact form → Web3Forms → emails to site.email (CC ops/sales requires
+ * Web3Forms Pro). It only shows "success" when Web3Forms actually confirms the
+ * send; any failure surfaces the real message and a direct mailto so we never
+ * pretend a lead went through when it didn't.
  */
 export default function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
-
-  function mailtoFallback(d: Record<string, string>) {
-    const subject = encodeURIComponent(`New consultation request from ${d.name || "website"}`);
-    const body = encodeURIComponent(
-      `Name: ${d.name}\nWork email: ${d.email}\nCompany: ${d.company}\nAddress: ${d.address}\n\nHow can we help:\n${d.message}`
-    );
-    window.location.href = `mailto:${site.email}?subject=${subject}&body=${body}`;
-  }
+  const [errorMsg, setErrorMsg] = useState("");
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -38,11 +31,10 @@ export default function ContactForm() {
       message: String(fd.get("message") || ""),
     };
 
-    // No key yet → open the email app (never a broken page).
     const key = site.formAccessKey as string;
     if (!key || key === PLACEHOLDER_KEY) {
-      mailtoFallback(d);
-      setStatus("success");
+      setErrorMsg("The form isn't connected yet.");
+      setStatus("error");
       return;
     }
 
@@ -52,15 +44,15 @@ export default function ContactForm() {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
-          access_key: site.formAccessKey,
+          access_key: key,
           subject: `New consultation request from ${d.name || "website"}`,
-          from_name: "AccountsUp website",
-          ccemail: site.emailOps,
-          Name: d.name,
-          "Work email": d.email,
-          Company: d.company,
-          Address: d.address,
-          "How can we help": d.message,
+          from_name: "AccountsUp Website",
+          ccemail: `${site.emailOps};${site.emailSales}`,
+          name: d.name,
+          email: d.email,
+          company: d.company,
+          address: d.address,
+          message: d.message,
         }),
       });
       const json = await res.json().catch(() => ({}));
@@ -68,13 +60,12 @@ export default function ContactForm() {
         setStatus("success");
         form.reset();
       } else {
-        mailtoFallback(d);
-        setStatus("success");
+        setErrorMsg(json?.message || json?.body?.message || "The form service didn't accept the submission.");
+        setStatus("error");
       }
     } catch {
-      // Network/service hiccup → fall back to the email app rather than erroring.
-      mailtoFallback(d);
-      setStatus("success");
+      setErrorMsg("Couldn't reach the form service. Please email us directly.");
+      setStatus("error");
     }
   }
 
@@ -135,6 +126,18 @@ export default function ContactForm() {
         {status === "sending" ? "Sending…" : "Send message"}
         <Send size={15} />
       </button>
+      {status === "error" && (
+        <div className="mt-4 flex items-start gap-2 rounded-xl border border-red-200 bg-red-50 p-3 text-sm text-red-700">
+          <AlertCircle size={16} className="mt-0.5 shrink-0" />
+          <span>
+            {errorMsg} You can also email us directly at{" "}
+            <a href={`mailto:${site.email}`} className="font-semibold underline">
+              {site.email}
+            </a>
+            .
+          </span>
+        </div>
+      )}
     </form>
   );
 }
