@@ -1,29 +1,83 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { Send, CheckCircle2 } from "lucide-react";
 import { site } from "@/content/site";
 
+const PLACEHOLDER_KEY = "REPLACE_WITH_WEB3FORMS_ACCESS_KEY";
+type Status = "idle" | "sending" | "success" | "error";
+
 /**
- * Static-export lead form using FormSubmit's native POST (no account, no API
- * key, no client-side fetch/CORS). On submit the browser POSTs directly to
- * FormSubmit, which emails every lead to site.email (CC site.emailOps) and then
- * redirects back to this page with ?sent=1 so we can show a success message.
- * First submission triggers a one-time "Activate" email to site.email.
+ * Static-export lead form using Web3Forms (reliable, Cloudflare-backed).
+ * Submissions are emailed to site.email, CC site.emailOps. If no access key is
+ * configured yet — or if the request fails for any reason — it falls back to
+ * opening the visitor's email app, so the form never dead-ends on an error.
  */
 export default function ContactForm() {
-  const [sent, setSent] = useState(false);
-  const nextRef = useRef<HTMLInputElement>(null);
+  const [status, setStatus] = useState<Status>("idle");
 
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    if (params.get("sent") === "1") setSent(true);
-    if (nextRef.current) {
-      nextRef.current.value = `${window.location.origin}${window.location.pathname}?sent=1`;
+  function mailtoFallback(d: Record<string, string>) {
+    const subject = encodeURIComponent(`New consultation request from ${d.name || "website"}`);
+    const body = encodeURIComponent(
+      `Name: ${d.name}\nWork email: ${d.email}\nCompany: ${d.company}\nAddress: ${d.address}\n\nHow can we help:\n${d.message}`
+    );
+    window.location.href = `mailto:${site.email}?subject=${subject}&body=${body}`;
+  }
+
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+    if (fd.get("botcheck")) return; // honeypot
+
+    const d = {
+      name: String(fd.get("name") || ""),
+      email: String(fd.get("email") || ""),
+      company: String(fd.get("company") || ""),
+      address: String(fd.get("address") || ""),
+      message: String(fd.get("message") || ""),
+    };
+
+    // No key yet → open the email app (never a broken page).
+    if (!site.formAccessKey || site.formAccessKey === PLACEHOLDER_KEY) {
+      mailtoFallback(d);
+      setStatus("success");
+      return;
     }
-  }, []);
 
-  if (sent) {
+    setStatus("sending");
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: site.formAccessKey,
+          subject: `New consultation request from ${d.name || "website"}`,
+          from_name: "AccountsUp website",
+          ccemail: site.emailOps,
+          Name: d.name,
+          "Work email": d.email,
+          Company: d.company,
+          Address: d.address,
+          "How can we help": d.message,
+        }),
+      });
+      const json = await res.json().catch(() => ({}));
+      if (res.ok && json.success) {
+        setStatus("success");
+        form.reset();
+      } else {
+        mailtoFallback(d);
+        setStatus("success");
+      }
+    } catch {
+      // Network/service hiccup → fall back to the email app rather than erroring.
+      mailtoFallback(d);
+      setStatus("success");
+    }
+  }
+
+  if (status === "success") {
     return (
       <div className="flex flex-col items-center rounded-3xl border border-line bg-cream p-10 text-center">
         <span className="flex h-14 w-14 items-center justify-center rounded-full bg-brand/15 text-brand">
@@ -40,26 +94,18 @@ export default function ContactForm() {
 
   return (
     <form
-      action={`https://formsubmit.co/${site.email}`}
-      method="POST"
+      onSubmit={onSubmit}
       className="rounded-3xl border border-line bg-cream p-6 sm:p-8"
     >
-      {/* FormSubmit config */}
-      <input type="hidden" name="_subject" value="New consultation request — AccountsUp" />
-      <input type="hidden" name="_cc" value={site.emailOps} />
-      <input type="hidden" name="_template" value="table" />
-      <input type="hidden" name="_captcha" value="false" />
-      <input ref={nextRef} type="hidden" name="_next" value="" />
       {/* honeypot */}
       <input
         type="text"
-        name="_honey"
+        name="botcheck"
         tabIndex={-1}
         autoComplete="off"
         className="hidden"
         aria-hidden="true"
       />
-
       <div className="grid gap-5 sm:grid-cols-2">
         <Field label="Full name" name="name" required />
         <Field label="Work email" name="email" type="email" required />
@@ -82,9 +128,11 @@ export default function ContactForm() {
       </div>
       <button
         type="submit"
-        className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-brand-dark sm:w-auto"
+        disabled={status === "sending"}
+        className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-brand-dark disabled:opacity-70 sm:w-auto"
       >
-        Send message <Send size={15} />
+        {status === "sending" ? "Sending…" : "Send message"}
+        <Send size={15} />
       </button>
     </form>
   );
