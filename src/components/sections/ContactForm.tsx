@@ -39,7 +39,8 @@ export default function ContactForm() {
     };
 
     // No key yet → open the email app (never a broken page).
-    if (!site.formAccessKey || site.formAccessKey === PLACEHOLDER_KEY) {
+    const key = site.formAccessKey as string;
+    if (!key || key === PLACEHOLDER_KEY) {
       mailtoFallback(d);
       setStatus("success");
       return;
