@@ -7,9 +7,12 @@ export default function TopBar() {
         <div className="flex items-center gap-4">
           <a
             href={`tel:${site.phone.replace(/[^+\d]/g, "")}`}
-            className="whitespace-nowrap transition-colors hover:text-white"
+            className="inline-flex items-center gap-1.5 whitespace-nowrap transition-colors hover:text-white"
           >
-            {site.phone}
+            <span className="text-sm leading-none" aria-hidden="true">
+              {site.phoneFlag}
+            </span>
+            <span>{site.phone}</span>
           </a>
         </div>
         <div className="flex items-center gap-4">

@@ -12,6 +12,8 @@ export const site = {
   email: "info@accountsup.com",
   emailOps: "operations@accountsup.com",
   phone: "+1 213 456 8222",
+  phoneFlag: "🇺🇸",
+  phoneCountry: "USA",
   availability: "24/7 Global Operations & Support",
 
   ctaPrimary: { label: "Book a Consultation", href: "/contact" },

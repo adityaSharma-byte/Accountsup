@@ -48,9 +48,11 @@ export default function ContactPage() {
                 <ContactRow icon={<Phone size={18} />} title="Phone">
                   <a
                     href={`tel:${site.phone.replace(/[^+\d]/g, "")}`}
-                    className="transition-colors hover:text-brand"
+                    className="inline-flex items-center gap-2 transition-colors hover:text-brand"
                   >
+                    <span aria-hidden="true">{site.phoneFlag}</span>
                     {site.phone}
+                    <span className="text-sm text-muted">({site.phoneCountry})</span>
                   </a>
                 </ContactRow>
                 <ContactRow icon={<Clock size={18} />} title="Availability">

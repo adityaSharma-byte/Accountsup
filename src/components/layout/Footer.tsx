@@ -166,7 +166,8 @@ export default function Footer() {
               href={`tel:${site.phone.replace(/[^+\d]/g, "")}`}
               className="inline-flex items-center gap-2 hover:text-brand"
             >
-              <Phone size={15} className="text-brand" /> {site.phone}
+              <Phone size={15} className="text-brand" />
+              <span aria-hidden="true">{site.phoneFlag}</span> {site.phone}
             </a>
             <span className="text-white/50">{site.availability}</span>
           </div>
