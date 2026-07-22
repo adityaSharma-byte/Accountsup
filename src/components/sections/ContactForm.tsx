@@ -47,7 +47,6 @@ export default function ContactForm() {
           access_key: key,
           subject: `New consultation request from ${d.name || "website"}`,
           from_name: "AccountsUp Website",
-          ccemail: `${site.emailOps};${site.emailSales}`,
           name: d.name,
           email: d.email,
           company: d.company,
