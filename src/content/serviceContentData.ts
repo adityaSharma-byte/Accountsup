@@ -1,7 +1,6 @@
 /**
- * GENERATED rich service-page content (original copy, written to match the
- * depth of leading finance-outsourcing sites without copying them).
- * Regenerate via the content workflow; do not hand-edit large sections.
+ * GENERATED rich service-page content (original copy). Reviewed by a CPA-level
+ * accuracy pass; regenerate via the content workflow. Do not hand-edit large sections.
  */
 import type { ServiceContent } from "./serviceContent";
 
@@ -148,7 +147,7 @@ export const serviceContentData: Record<string, ServiceContent> =
   },
   "taxation": {
     "slug": "taxation",
-    "heroTagline": "Individual and corporate returns filed accurately, on time, and optimized to lower every legitimate dollar of tax.",
+    "heroTagline": "Individual and corporate returns filed accurately, on time, and optimized to keep your tax as low as the law legitimately allows.",
     "metaDescription": "Individual and corporate tax preparation, planning, and multi-jurisdiction compliance for CPA firms and growing businesses — accurate, defensible, and on time.",
     "overview": [
       "Tax season shouldn't mean bottlenecks, late nights, or exposure. AccountsUp prepares individual and corporate returns end to end — from data intake and workpaper organization through preparation, review, and e-filing — for CPA firms and growing businesses across the US, Canada, UK, and Australia. Every return is built to be accurate, defensible, and filed on time, with liabilities minimized wherever the code legitimately allows.",
@@ -288,16 +287,16 @@ export const serviceContentData: Record<string, ServiceContent> =
   "sales-tax": {
     "slug": "sales-tax",
     "heroTagline": "Stay compliant across every state, province, and country — nexus to remittance handled by dedicated indirect-tax experts.",
-    "metaDescription": "AccountsUp manages US sales tax, UK VAT, and Canada and Australia GST/HST: nexus review, registration, filing, remittance, reconciliation, and audit support.",
+    "metaDescription": "AccountsUp manages US sales tax, UK VAT, Canadian GST/HST, and Australian GST: nexus review, registration, filing, remittance, reconciliation, and audit support.",
     "overview": [
-      "Indirect tax has quietly become one of the most error-prone areas of finance. Since the 2018 Wayfair ruling, a single online sale can create economic nexus in a state you have never set foot in — and every jurisdiction sets its own thresholds, rates, filing calendars, and product-taxability rules. AccountsUp gives you a dedicated team that tracks all of it and files on time, every period.",
+      "Indirect tax has quietly become one of the most error-prone areas of finance. Since the 2018 Wayfair ruling, online sales alone can create economic nexus in a state you have never set foot in — and every jurisdiction sets its own thresholds, rates, filing calendars, and product-taxability rules. AccountsUp gives you a dedicated team that tracks all of it and files on time, every period.",
       "Whether you owe US sales tax across forty-five states, UK VAT under Making Tax Digital, Canadian GST/HST and provincial PST, or Australian GST reported on a BAS, we work inside your existing stack — QuickBooks, Xero, NetSuite, Sage, and tax engines like Avalara or TaxJar — so returns reconcile back to the ledger and nothing is filed from a spreadsheet guess.",
       "When a state notice or audit does arrive, you are not scrambling for records. Every return we file is backed by reconciled workpapers, exemption-certificate documentation, and a clear liability trail, so responding to an auditor is a matter of retrieving evidence we already organized — not reconstructing three years of transactions under a deadline."
     ],
     "included": [
       {
         "title": "Nexus review",
-        "body": "We run a state-by-state economic and physical nexus study against current Wayfair thresholds, flagging where you must register now and where you are approaching a trigger.",
+        "body": "We run a state-by-state economic and physical nexus study against each state's current thresholds and presence rules, flagging where you must register now and where you are approaching a trigger.",
         "icon": "landmark"
       },
       {
@@ -364,7 +363,7 @@ export const serviceContentData: Record<string, ServiceContent> =
       },
       {
         "title": "Multi-country coverage",
-        "body": "One team files US sales tax, UK VAT, and Canadian and Australian GST/HST, so expanding into a new market never means finding a new provider.",
+        "body": "One team files US sales tax, UK VAT, Canadian GST/HST, and Australian GST, so expanding into a new market never means finding a new provider.",
         "icon": "globe"
       }
     ],
@@ -456,7 +455,7 @@ export const serviceContentData: Record<string, ServiceContent> =
       },
       {
         "title": "Confirmations & Vouching Support",
-        "body": "Preparation and tracking of bank, AR, AP, and legal confirmations, plus pulling and organizing invoices, contracts, and support for detail testing and sampling.",
+        "body": "Preparation and tracking of bank, AR, and AP confirmations and legal letters, plus pulling and organizing invoices, contracts, and support for detail testing and sampling.",
         "icon": "badge-check"
       },
       {
@@ -493,7 +492,7 @@ export const serviceContentData: Record<string, ServiceContent> =
       },
       {
         "title": "Capacity That Scales With Busy Season",
-        "body": "Add reviewed preparation capacity for the January-through-April crunch without hiring, onboarding, or carrying headcount you don't need in the off-season.",
+        "body": "Add reviewed preparation capacity for your busy-season crunch without hiring, onboarding, or carrying headcount you don't need in the off-season.",
         "icon": "rocket"
       }
     ],
@@ -551,7 +550,7 @@ export const serviceContentData: Record<string, ServiceContent> =
   },
   "financial-statements": {
     "slug": "financial-statements",
-    "heroTagline": "Audit-ready GAAP and IFRS financial statements, compiled and disclosed with expert precision and AI-verified accuracy.",
+    "heroTagline": "Audit-ready GAAP and IFRS financial statements, compiled and disclosed with expert precision and AI-assisted accuracy.",
     "metaDescription": "AccountsUp prepares audit-ready GAAP & IFRS financial statements, compilations, complex-transaction accounting, and disclosures for CPA firms and businesses.",
     "overview": [
       "Your financial statements are the document every lender, investor, board member, and auditor reads first. AccountsUp produces complete, standard-compliant statement packages — balance sheet, income statement, cash flow, and equity — with footnote disclosures that withstand scrutiny. Whether you report under US GAAP or IFRS, our dedicated teams turn raw ledgers into board-ready reporting your stakeholders trust on sight.",
@@ -586,7 +585,7 @@ export const serviceContentData: Record<string, ServiceContent> =
       },
       {
         "title": "Consolidations & Multi-Entity Reporting",
-        "body": "Consolidated statements across subsidiaries, intercompany eliminations, minority interest, and multi-currency translation, delivered as one clean reporting package for groups and holding structures.",
+        "body": "Consolidated statements across subsidiaries, intercompany eliminations, noncontrolling interest, and multi-currency translation, delivered as one clean reporting package for groups and holding structures.",
         "icon": "building-2"
       },
       {
@@ -844,7 +843,7 @@ export const serviceContentData: Record<string, ServiceContent> =
       },
       {
         "title": "Year-End Filings (W-2, 1099, T4)",
-        "body": "Annual W-2, W-3, 1099-NEC, T4, T4A, P60, and payment summary preparation, reconciliation to the general ledger, and filing with the IRS, CRA, HMRC, or ATO.",
+        "body": "Annual W-2, W-3, 1099-NEC, T4, T4A, P60, and Single Touch Payroll (STP) finalisation preparation, reconciliation to the general ledger, and filing with the IRS, CRA, HMRC, or ATO.",
         "icon": "file-check"
       },
       {
@@ -988,7 +987,7 @@ export const serviceContentData: Record<string, ServiceContent> =
       },
       {
         "title": "Form 941-X Preparation & Filing",
-        "body": "Accurate preparation of the amended quarterly returns, with worksheets, credit calculations, and reasonable-cause explanations ready for signature and submission to the IRS.",
+        "body": "Accurate preparation of the amended quarterly returns, with worksheets, credit calculations, and detailed explanations of the corrections ready for signature and submission to the IRS.",
         "icon": "file-text"
       },
       {
@@ -1112,12 +1111,12 @@ export const serviceContentData: Record<string, ServiceContent> =
       },
       {
         "title": "Input Tax Credit & ITR Recovery",
-        "body": "We identify and substantiate every recoverable input tax credit and Quebec ITR, applying large-business restrictions correctly so you never leave eligible refunds unclaimed.",
+        "body": "We identify and substantiate every recoverable input tax credit and Quebec ITR, applying eligibility and documentation rules correctly so you never leave eligible refunds unclaimed.",
         "icon": "coins"
       },
       {
         "title": "Return Preparation & Filing",
-        "body": "We prepare and file GST34, RC7200, and Quebec FP-500 returns through GST/HST NETFILE and My Business Account, matched to your filing period.",
+        "body": "We prepare and file GST34, RC7200, and Quebec FP-500 returns through GST/HST NETFILE, My Business Account, and Revenu Québec's online services, matched to your filing period.",
         "icon": "file-text"
       },
       {
@@ -1203,7 +1202,7 @@ export const serviceContentData: Record<string, ServiceContent> =
       },
       {
         "q": "How is QST different from GST/HST, and why does it matter?",
-        "a": "QST is Quebec's provincial tax, administered separately by Revenu Québec rather than the CRA, with its own registration, return (FP-500), and input tax refund rules. Large businesses face specific ITR restrictions. Handling QST as if it mirrors GST/HST is a common, costly error we prevent."
+        "a": "QST is Quebec's provincial tax, administered separately by Revenu Québec rather than the CRA, with its own registration, return (FP-500), and input tax refund rules. Its ITR eligibility and documentation requirements diverge from the federal ITC regime in ways that are easy to miss. Handling QST as if it mirrors GST/HST is a common, costly error we prevent."
       },
       {
         "q": "Do you work in our existing accounting software?",
@@ -1234,14 +1233,14 @@ export const serviceContentData: Record<string, ServiceContent> =
     "heroTagline": "Compilation engagement financial statements built to CSRS 4200, ready for your bank, CRA, and year-end close.",
     "metaDescription": "AccountsUp prepares CSRS 4200 Notice-to-Reader compilations for Canadian businesses and CPA firms: financial statements and year-end files banks and CRA accept.",
     "overview": [
-      "A Notice-to-Reader engagement — now formally a Compilation Engagement under CSRS 4200 — turns your bookkeeping into structured financial statements without an audit or review. AccountsUp assembles your balance sheet and income statement, drafts the required basis-of-accounting note, and issues a compilation engagement report your lender, shareholders, and the CRA recognize. No assurance is expressed, but every figure is reconciled and defensible.",
+      "A Notice-to-Reader engagement — now formally a Compilation Engagement under CSRS 4200 — turns your bookkeeping into structured financial statements without an audit or review. AccountsUp assembles your balance sheet and income statement, drafts the required basis-of-accounting note, and prepares a compilation engagement report your lender, shareholders, and the CRA recognize. No assurance is expressed, but every figure is reconciled and defensible.",
       "The service fits two buyers. CPA and accounting firms use AccountsUp as white-label capacity through T2 season, offloading file preparation while keeping the client relationship and the final sign-off. Growing corporations, holding companies, and professional practices use us as their outsourced year-end team — the people who close the books, prepare the statements, and hand the accountant a clean, review-ready file.",
       "We work inside your existing stack rather than forcing a migration. Your team keeps QuickBooks Online, Xero, or Sage; we log in, reconcile the year, post adjusting entries, and build the statements there. AI-assisted checks flag unreconciled balances, duplicate entries, and misclassified accounts before a Canadian-trained reviewer signs off — so the file that reaches you is complete, tie-out clean, and CSRS 4200-compliant."
     ],
     "included": [
       {
         "title": "Compilation Engagement Report",
-        "body": "We draft and issue the CSRS 4200 compilation engagement report that replaces the old Notice-to-Reader communication, correctly worded for the intended users.",
+        "body": "We draft the CSRS 4200 compilation engagement report that replaces the old Notice-to-Reader communication, correctly worded for the intended users.",
         "icon": "file-check"
       },
       {
@@ -1338,7 +1337,7 @@ export const serviceContentData: Record<string, ServiceContent> =
     "faqs": [
       {
         "q": "What's the difference between a Notice-to-Reader and a Compilation Engagement?",
-        "a": "They're the same service under a new standard. Effective for year-ends after December 14, 2021, CSRS 4200 replaced the old Notice-to-Reader. The deliverable is now a compilation engagement report with a required basis-of-accounting note, but the purpose — unaudited statements without assurance — is unchanged."
+        "a": "They're the same service under a new standard. Effective for year-ends on or after December 14, 2021, CSRS 4200 replaced the old Notice-to-Reader. The deliverable is now a compilation engagement report with a required basis-of-accounting note, but the purpose — unaudited statements without assurance — is unchanged."
       },
       {
         "q": "Does a compilation provide any assurance to my bank?",
@@ -1497,7 +1496,7 @@ export const serviceContentData: Record<string, ServiceContent> =
       },
       {
         "q": "What happens if a BAS was lodged incorrectly before we started?",
-        "a": "We review your prior lodgements during onboarding and, where we find errors, prepare revisions or an amended BAS with supporting workings for the ATO. Catching and correcting historical GST mistakes early reduces the risk of interest, penalties, and a wider ATO review down the line."
+        "a": "We review your prior lodgements during onboarding and, where we find errors, prepare a revised BAS or correct them in a later statement, with supporting workings for the ATO. Catching and correcting historical GST mistakes early reduces the risk of interest, penalties, and a wider ATO review down the line."
       }
     ],
     "outcomes": [
@@ -1645,8 +1644,8 @@ export const serviceContentData: Record<string, ServiceContent> =
     "heroTagline": "Never miss a Companies House deadline — accurate confirmation statements filed on time, every review period, by dedicated UK-compliance specialists.",
     "metaDescription": "AccountsUp files your UK Companies House confirmation statement (CS01) accurately and on time — PSC, SIC codes, statement of capital and registers verified.",
     "overview": [
-      "Every company and LLP registered in England, Wales, Scotland or Northern Ireland must file a confirmation statement (form CS01) with Companies House at least once every 12 months — even when nothing has changed. It replaced the old annual return in 2016 and confirms that the public record still shows the correct directors, shareholders, registered office, SIC codes and people with significant control.",
-      "AccountsUp runs your confirmation statement end to end. A dedicated compliance specialist reviews your statutory registers, reconciles them against your accounting stack, drafts the filing, and submits it through Companies House WebFiling well before your due date. AI-assisted checks flag mismatched PSC data, lapsed SIC codes and share-capital discrepancies before they reach the public register, so your record stays clean and penalty-free.",
+      "Every company and LLP registered in England, Wales, Scotland or Northern Ireland must file a confirmation statement — form CS01 for companies, LL CS01 for LLPs — with Companies House at least once every 12 months, even when nothing has changed. It replaced the old annual return in 2016 and confirms that the public record still shows the correct directors, members, shareholders, registered office, SIC codes and people with significant control.",
+      "AccountsUp runs your confirmation statement end to end. A dedicated compliance specialist reviews your statutory registers, reconciles them against your accounting stack, drafts the filing, and submits it through Companies House WebFiling well before your due date. AI-assisted checks flag mismatched PSC data, outdated SIC codes and share-capital discrepancies before they reach the public register, so your record stays clean and penalty-free.",
       "Whether you manage a single trading company, a group with multiple subsidiaries, or a portfolio of clients as a CPA or accountancy firm, we track every review period, chase the confirmation date, and keep an auditable trail of what was filed and when. You get the reassurance of a maintained register without diverting your team onto Companies House admin."
     ],
     "included": [
@@ -1816,7 +1815,7 @@ export const serviceContentData: Record<string, ServiceContent> =
       },
       {
         "title": "Partial Exemption & Special Schemes",
-        "body": "For mixed-supply and margin-scheme businesses, we run partial exemption calculations, apply the annual adjustment, and handle second-hand, TOMS, and reverse-charge treatments accurately.",
+        "body": "For partly exempt and margin-scheme businesses, we run partial exemption calculations, apply the annual adjustment, and handle second-hand, TOMS, and reverse-charge treatments accurately.",
         "icon": "percent"
       },
       {
@@ -1915,7 +1914,7 @@ export const serviceContentData: Record<string, ServiceContent> =
   },
   "tax-credits": {
     "slug": "tax-credits",
-    "heroTagline": "Capture every R&D and hiring credit you've earned — SR&ED, ERTC, and §41 — with documentation built to survive review.",
+    "heroTagline": "Capture every R&D, retention, and hiring credit you've earned — SR&ED, ERTC, and §41 — with documentation built to survive review.",
     "metaDescription": "AccountsUp helps CPA firms and businesses claim US R&D credits, ERTC, and Canadian SR&ED with audit-ready documentation, calculations, and expert review.",
     "overview": [
       "Governments reward the work you're already doing — building software, refining processes, retaining staff through disruption, and hiring from targeted groups — but the credits go unclaimed when the paperwork feels daunting. AccountsUp identifies every incentive your business qualifies for across the US and Canada, quantifies the benefit precisely, and files claims backed by the contemporaneous evidence tax authorities expect to see.",
@@ -1925,7 +1924,7 @@ export const serviceContentData: Record<string, ServiceContent> =
     "included": [
       {
         "title": "R&D Tax Credit Studies (US §41)",
-        "body": "Full IRC §41 studies with qualified research expense identification, four-part-test analysis, and Form 6765 filing — including the payroll-offset election for pre-revenue startups.",
+        "body": "Full IRC §41 studies with qualified research expense identification, four-part-test analysis, and Form 6765 filing — including the payroll-offset election for qualified small businesses.",
         "icon": "line-chart"
       },
       {
@@ -1960,7 +1959,7 @@ export const serviceContentData: Record<string, ServiceContent> =
       },
       {
         "title": "Amended Returns & Look-Back Claims",
-        "body": "Retroactive credit recovery for open tax years — amended returns and carryforward tracking that reclaim benefits from R&D and hiring activity you never claimed.",
+        "body": "Retroactive credit recovery for open tax years — amended returns and carryforward tracking that reclaim benefits from R&D activity you never claimed.",
         "icon": "receipt"
       }
     ],
@@ -2025,7 +2024,7 @@ export const serviceContentData: Record<string, ServiceContent> =
       },
       {
         "q": "Can you still help if we already claimed ERTC or missed prior R&D credits?",
-        "a": "Yes. We re-substantiate existing ERTC claims and prepare Form 941-X or audit-defense packages, and we file amended returns to recover R&D and hiring credits from open tax years you never claimed. Carryforwards from prior activity are tracked and applied too."
+        "a": "Yes. We re-substantiate existing ERTC claims and prepare Form 941-X or audit-defense packages, and we file amended returns to recover R&D credits from open tax years you never claimed. Carryforwards from prior activity are tracked and applied too."
       },
       {
         "q": "Will this disrupt our current accounting workflow or software?",
@@ -2099,7 +2098,7 @@ export const serviceContentData: Record<string, ServiceContent> =
     ],
     "benefits": [
       {
-        "title": "Zero Duplicate or Fraudulent Payments",
+        "title": "Guard Against Duplicate or Fraudulent Payments",
         "body": "AI duplicate detection and enforced segregation of duties stop double-billing and invoice fraud before a single dollar leaves your account.",
         "icon": "lock"
       },
@@ -2232,7 +2231,7 @@ export const serviceContentData: Record<string, ServiceContent> =
       },
       {
         "title": "DSO Reduction Program",
-        "body": "A targeted program that diagnoses where days sales outstanding leaks — billing lag, dispute backlog, weak follow-up — then fixes the root causes to pull DSO down for good.",
+        "body": "A targeted program that diagnoses where days sales outstanding leaks — billing lag, dispute backlog, weak follow-up — then fixes the root causes, not just the symptoms, so the reduction holds.",
         "icon": "percent"
       }
     ],
@@ -2491,7 +2490,7 @@ export const serviceContentData: Record<string, ServiceContent> =
       },
       {
         "title": "GAAP / IFRS financial statements",
-        "body": "Statutory financial statements prepared to US GAAP or IFRS, with supporting notes and workpapers that reconcile cleanly to your ledger and stand up to audit.",
+        "body": "Financial statements prepared to US GAAP or IFRS, with supporting notes and workpapers that reconcile cleanly to your ledger and stand up to audit.",
         "icon": "file-check"
       },
       {
@@ -2572,7 +2571,7 @@ export const serviceContentData: Record<string, ServiceContent> =
       },
       {
         "q": "Do you prepare statements to GAAP or IFRS?",
-        "a": "Yes. We prepare statutory financial statements to US GAAP or IFRS, whichever your jurisdiction and stakeholders require, and can present both where a group reports internationally. Each statement comes with supporting notes and workpapers that reconcile to your ledger and are ready for external audit."
+        "a": "Yes. We prepare financial statements to US GAAP or IFRS, whichever your jurisdiction and stakeholders require, and can present both where a group reports internationally. Each statement comes with supporting notes and workpapers that reconcile to your ledger and are ready for external audit."
       },
       {
         "q": "How do you keep reporting consistent from period to period?",
@@ -2965,7 +2964,7 @@ export const serviceContentData: Record<string, ServiceContent> =
         "body": "As your business changes we add scenarios, deepen the model, and extend reporting — so the planning grows with you instead of being rebuilt each year."
       }
     ],
-    "differentiator": "Most outsourced finance shops hand you a spreadsheet and call it planning. AccountsUp pairs a dedicated FP&A team that actually learns your business with AI-assisted tooling that keeps every model accurate, and delivers it all inside the QuickBooks, Xero, NetSuite, or Sage environment you already trust. Your data never leaves an enterprise-grade security perimeter, and every deliverable ends in a recommendation — the analysis you can act on, not just admire.",
+    "differentiator": "Most outsourced finance shops hand you a spreadsheet and call it planning. AccountsUp pairs a dedicated FP&A team that actually learns your business with AI-assisted tooling that keeps every model reconciled and error-checked, and delivers it all inside the QuickBooks, Xero, NetSuite, or Sage environment you already trust. Your data never leaves an enterprise-grade security perimeter, and every deliverable ends in a recommendation — the analysis you can act on, not just admire.",
     "faqs": [
       {
         "q": "How is FP&A different from bookkeeping or accounting?",
