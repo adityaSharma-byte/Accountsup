@@ -25,14 +25,14 @@ export default function Hero() {
             <span className="h-2 w-2 rounded-full bg-brand" />
             Global Accounting &amp; Finance Partner
           </span>
-          <h1 className="mt-6 text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl md:text-6xl">
-            Your entire finance function,{" "}
-            <span className="text-brand">handled worldwide</span>
+          <h1 className="mt-6 text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl">
+            Outsourced accounting &amp; finance for{" "}
+            <span className="text-brand">CPA firms and growing businesses</span>
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/80">
-            Bookkeeping, tax, audit, payroll, virtual CFO, and reporting —
-            delivered by dedicated expert teams for CPA firms and growing
-            businesses across the globe.
+            Bookkeeping, tax, audit, payroll, and virtual CFO — dedicated expert
+            teams with AI-assisted accuracy, across the US, Canada, UK, and
+            Australia.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <Button href={site.ctaPrimary.href} className="w-full sm:w-auto">
