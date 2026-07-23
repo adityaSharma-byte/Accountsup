@@ -24,7 +24,7 @@ export const media = {
   team: asset("/img/team.jpg"),
   globalteam: asset("/img/globalteam.jpg"),
   videoPoster: asset("/img/video-poster.jpg"),
-  brandVideo: asset("/brand-video.mp4"),
+  brandVideo: asset("/brand-video-v2.mp4"),
 };
 
 // Primary (overview) image per service slug — themed to the work.
