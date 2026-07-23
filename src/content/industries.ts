@@ -2,6 +2,7 @@
  * Industry verticals — each becomes a full landing page under /industries/[slug].
  * This is AccountsUp's step beyond Global FPO, which has no industries section.
  * All copy is original and written to be credible for a finance-outsourcing buyer.
+ * `serves` lists representative sub-segments (types of businesses, not named clients).
  */
 export type Industry = {
   slug: string;
@@ -9,6 +10,7 @@ export type Industry = {
   short: string;
   icon: string;
   blurb: string;
+  serves: string;
   overview: string;
   challenges: string[];
   howWeHelp: string[];
@@ -22,6 +24,8 @@ export const industries: Industry[] = [
     icon: "cpu",
     blurb:
       "Revenue recognition, deferred revenue, and investor-ready metrics for subscription businesses.",
+    serves:
+      "B2B & B2C SaaS, marketplaces, dev tools, IT & managed services, and digital agencies",
     overview:
       "Recurring-revenue models create accounting complexity that generic bookkeeping can't keep up with. AccountsUp gives SaaS and technology companies clean ASC 606 revenue recognition, reliable SaaS metrics, and board-ready reporting — so your numbers are ready the moment a fundraise or audit begins.",
     challenges: [
@@ -44,6 +48,8 @@ export const industries: Industry[] = [
     icon: "shopping-bag",
     blurb:
       "Multi-channel reconciliation, inventory accounting, and sales-tax nexus handled end to end.",
+    serves:
+      "DTC beauty & apparel brands, Amazon & Shopify sellers, subscription boxes, and omnichannel retailers",
     overview:
       "Selling across Shopify, Amazon, and physical channels means thousands of transactions, payouts, fees, and refunds to reconcile every month. AccountsUp turns that firehose into clean books — with accurate inventory and cost of goods, and full sales-tax and VAT compliance across the markets you sell in.",
     challenges: [
@@ -66,6 +72,8 @@ export const industries: Industry[] = [
     icon: "building-2",
     blurb:
       "Property-level books, job costing, and draw management for owners, developers, and contractors.",
+    serves:
+      "developers, property managers, general contractors, subcontractors, and REITs",
     overview:
       "Real estate and construction finance lives at the property and project level. AccountsUp keeps entity- and project-level books clean — from job costing and WIP schedules to CAM reconciliations and lender draw packages — so every stakeholder sees an accurate picture.",
     challenges: [
@@ -88,6 +96,8 @@ export const industries: Industry[] = [
     icon: "activity",
     blurb:
       "Compliant bookkeeping, payer reconciliation, and cost reporting for care providers and clinics.",
+    serves:
+      "clinics, dental & specialty practices, med-spas, home-health providers, and life-sciences startups",
     overview:
       "Healthcare organizations juggle payer mixes, insurance reconciliation, and tight compliance. AccountsUp delivers accurate, compliant financial operations for practices, clinics, and life-sciences companies — with the documentation discipline the sector demands.",
     challenges: [
@@ -110,6 +120,8 @@ export const industries: Industry[] = [
     icon: "factory",
     blurb:
       "Standard costing, inventory valuation, and margin analysis for makers and distributors.",
+    serves:
+      "makers, wholesalers, importers, food & beverage producers, and D2C manufacturers",
     overview:
       "For manufacturers and distributors, the truth is in the cost of goods. AccountsUp maintains accurate standard and actual costing, disciplined inventory valuation, and variance analysis — so pricing, purchasing, and production decisions rest on numbers you can trust.",
     challenges: [
@@ -132,6 +144,8 @@ export const industries: Industry[] = [
     icon: "rocket",
     blurb:
       "Runway, burn, and investor reporting — a full finance function before you need to hire one.",
+    serves:
+      "pre-seed to Series B founders, and VC- & PE-backed teams",
     overview:
       "Early-stage companies need finance rigor without an in-house team. AccountsUp is your outsourced finance function — clean books, burn and runway tracking, and diligence-ready reporting — so founders can focus on building while staying fundraise-ready.",
     challenges: [
@@ -154,6 +168,8 @@ export const industries: Industry[] = [
     icon: "briefcase",
     blurb:
       "Project profitability, WIP, and utilization reporting for agencies, firms, and consultancies.",
+    serves:
+      "creative & marketing agencies, law firms, consultancies, and architecture & engineering studios",
     overview:
       "For agencies, law firms, and consultancies, profitability is a project- and people-level question. AccountsUp keeps time, billing, and WIP tightly reconciled — turning utilization and realization into clear reporting that protects your margins.",
     challenges: [
@@ -176,6 +192,8 @@ export const industries: Industry[] = [
     icon: "landmark",
     blurb:
       "Fund, management-company, and fintech accounting with the controls and reporting the sector expects.",
+    serves:
+      "fund managers, fintechs, RIAs, broker-dealers, and family offices",
     overview:
       "Financial-services firms operate under a higher bar for accuracy and controls. AccountsUp supports fund managers, fintechs, and advisory firms with rigorous bookkeeping, reconciliations, and reporting built for regulated, high-scrutiny environments.",
     challenges: [

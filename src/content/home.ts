@@ -29,7 +29,7 @@ export const whyUs = [
     body: "Multi-level review and clean documentation trails mean your books hold up to scrutiny every cycle.",
   },
   {
-    icon: "coins",
+    icon: "cpu",
     title: "AI-Powered Accuracy",
     body: "Automation paired with expert human review for precision, faster turnaround, and fewer errors.",
   },

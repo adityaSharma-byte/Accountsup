@@ -53,6 +53,13 @@ export default async function IndustryDetail({
               </div>
               <p className="mt-6 text-lg leading-relaxed text-body">{ind.overview}</p>
 
+              <div className="mt-6 rounded-2xl border border-line bg-cream p-5">
+                <p className="text-sm font-bold uppercase tracking-wide text-brand">
+                  Who we serve
+                </p>
+                <p className="mt-1.5 leading-relaxed text-body">{ind.serves}</p>
+              </div>
+
               <h2 className="mt-10 text-xl font-bold text-ink">Challenges we solve</h2>
               <ul className="mt-5 grid gap-4 sm:grid-cols-2">
                 {ind.challenges.map((c) => (

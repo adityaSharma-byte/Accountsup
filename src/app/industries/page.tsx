@@ -34,7 +34,11 @@ export default function IndustriesPage() {
                   <Icon name={ind.icon} size={22} />
                 </div>
                 <h2 className="mt-5 text-lg font-bold text-ink">{ind.name}</h2>
-                <p className="mt-2 flex-1 leading-relaxed text-body">{ind.blurb}</p>
+                <p className="mt-2 leading-relaxed text-body">{ind.blurb}</p>
+                <p className="mt-3 flex-1 text-xs leading-relaxed text-muted">
+                  <span className="font-semibold text-navy">We serve: </span>
+                  {ind.serves}
+                </p>
                 <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-navy transition-colors group-hover:text-brand">
                   Explore {ind.short} <ArrowRight size={15} />
                 </span>

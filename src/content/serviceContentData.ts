@@ -38,8 +38,8 @@ export const serviceContentData: Record<string, ServiceContent> =
         "icon": "receipt"
       },
       {
-        "title": "GAAP/IFRS Chart of Accounts",
-        "body": "A chart of accounts structured for your entity and reporting framework, with consistent coding rules that make statements comparable, auditable, and ready for tax.",
+        "title": "Chart of Accounts & Standards",
+        "body": "A clean, consistent chart of accounts, mapped to your reporting framework — US GAAP or IFRS — so entries are coded right and statements stay comparable, auditable, and tax-ready.",
         "icon": "book-open"
       },
       {

@@ -16,8 +16,8 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Reveal><Stats /></Reveal>
       <VideoSection />
+      <Reveal><Stats /></Reveal>
       <Reveal><WhyUs /></Reveal>
       <Reveal><ServicesOverview /></Reveal>
       <Reveal><Industries /></Reveal>
